@@ -16,7 +16,7 @@ Swift 5.1, 5.0, 4.2, 4.0, 3.2, 3.0 (Xcode 11)
 `pod 'IQKeyboardManagerSwift'`
 
 In AppDelegate.swift, just import IQKeyboardManagerSwift framework and enable IQKeyboardManager.
-<b><i> import IQKeyboardManagerSwift
+```swift import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,4 +29,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       return true
     }
-}</i><b>
+}```
