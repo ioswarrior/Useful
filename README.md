@@ -153,7 +153,7 @@ func saveToDefaults(newValue: Any?, forKey: String) {
 }
 ```
 
-# Defaults Navigine
+# Defaults 
 ```swift
 import Foundation
 // Создаем Дефолты для того, чтобы хранить информацию локально, в частности,
