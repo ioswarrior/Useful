@@ -9,11 +9,16 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
   
 # IQKeyboardManager
 
-# Pods:
-pod 'IQKeyboardManager' #iOS8 and later
-pod 'IQKeyboardManagerSwift'
+IQKeyboardManager (Swift): IQKeyboardManagerSwift is available through CocoaPods. To install it, simply add the following line to your Podfile: (#236)
 
-# Code:
+Swift 5.1, 5.0, 4.2, 4.0, 3.2, 3.0 (Xcode 11)
+
+pod 'IQKeyboardManagerSwift'
+Or you can choose the version you need based on Swift support table from Requirements
+
+pod 'IQKeyboardManagerSwift', '6.3.0'
+In AppDelegate.swift, just import IQKeyboardManagerSwift framework and enable IQKeyboardManager.
+
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
@@ -23,8 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-      IQKeyboardManager.shared().isEnabled = true
-
+      IQKeyboardManager.shared.enable = true
       return true
     }
 }
