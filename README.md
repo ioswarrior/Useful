@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-# Defaults
+# Defaults Aura
 ```swift
 final class Defaults {
     static let current = Defaults()
@@ -152,3 +152,34 @@ func saveToDefaults(newValue: Any?, forKey: String) {
     }
 }
 ```
+
+# Defaults Navigine
+```swift
+import Foundation
+// Создаем Дефолты для того, чтобы хранить информацию локально, в частности,
+// чтобы хранить там сервер(хост) в виде строки(текста)
+class Defaults {
+  static let current = Defaults()
+  
+  private static let hostChange = "host"
+  
+  var host: String? {
+    get {
+      if let host = UserDefaults.standard.object(forKey: Defaults.hostChange) as? String {
+        return host
+      }
+      return nil
+    } set {
+      saveToDefaults(newValue: newValue, forKey: Defaults.hostChange)
+    }
+  }
+  
+  func saveToDefaults(newValue: Any?, forKey: String) {
+    if newValue != nil {
+      UserDefaults.standard.set(newValue!, forKey: forKey)
+      UserDefaults.standard.synchronize()
+    }
+  }
+}
+```
+
