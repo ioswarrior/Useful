@@ -14,9 +14,7 @@ IQKeyboardManager (Swift): IQKeyboardManagerSwift is available through CocoaPods
 Swift 5.1, 5.0, 4.2, 4.0, 3.2, 3.0 (Xcode 11)
 
 pod 'IQKeyboardManagerSwift'
-Or you can choose the version you need based on Swift support table from Requirements
 
-pod 'IQKeyboardManagerSwift', '6.3.0'
 In AppDelegate.swift, just import IQKeyboardManagerSwift framework and enable IQKeyboardManager.
 
     import IQKeyboardManagerSwift
