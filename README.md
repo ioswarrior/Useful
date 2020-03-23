@@ -2,11 +2,10 @@
 
 # Keyboard:
 
-    ```swift
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-```
+
   
 # IQKeyboardManager
 
@@ -14,9 +13,7 @@ IQKeyboardManager (Swift): IQKeyboardManagerSwift is available through CocoaPods
 
 Swift 5.1, 5.0, 4.2, 4.0, 3.2, 3.0 (Xcode 11)
 
-```swift
 pod 'IQKeyboardManagerSwift'
-```
 
 In AppDelegate.swift, just import IQKeyboardManagerSwift framework and enable IQKeyboardManager.
 ```swift import IQKeyboardManagerSwift
