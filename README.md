@@ -2,9 +2,9 @@
 
 # Keyboard:
 
-override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.view.endEditing(true)
-}
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
   
   
 # IQKeyboardManager
@@ -19,16 +19,17 @@ Or you can choose the version you need based on Swift support table from Require
 pod 'IQKeyboardManagerSwift', '6.3.0'
 In AppDelegate.swift, just import IQKeyboardManagerSwift framework and enable IQKeyboardManager.
 
-import IQKeyboardManagerSwift
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-      IQKeyboardManager.shared.enable = true
-      return true
+    import IQKeyboardManagerSwift
+    
+    @UIApplicationMain
+    class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+        var window: UIWindow?
+    
+        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+          IQKeyboardManager.shared.enable = true
+    
+          return true
+        }
     }
-}
