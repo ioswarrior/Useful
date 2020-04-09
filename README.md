@@ -156,8 +156,7 @@ func saveToDefaults(newValue: Any?, forKey: String) {
 # Defaults 
 ```swift
 import Foundation
-// Создаем Дефолты для того, чтобы хранить информацию локально, в частности,
-// чтобы хранить там сервер(хост) в виде строки(текста)
+
 class Defaults {
   static let current = Defaults()
   
@@ -182,4 +181,54 @@ class Defaults {
   }
 }
 ```
+# Наработки для клавиатуры
 
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    self.nameTF.delegate = self
+    self.companyTF.delegate = self
+    
+    let toolbar = UIToolbar(frame: .init(origin: .zero, size: .init(width: self.view.frame.width, height: 44)))
+    let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDone))
+    done.tintColor = UIColor.black
+    let fixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+    fixedSpace.width = 8
+    let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let arrowUp = createBarButtonItem(with: #selector(arrowUpTap), image: UIImage.init(named: "arrowUp"))
+    let arrowDown = createBarButtonItem(with: #selector(arrowDownTap), image: UIImage.init(named: "arrowDown"))
+    toolbar.setItems([arrowUp, fixedSpace,  arrowDown, flexSpace, done], animated: false)
+    nameTF.inputAccessoryView = toolbar
+    companyTF.inputAccessoryView = toolbar
+  }
+
+@objc func arrowUpTap() {
+    nameTF.becomeFirstResponder()
+  }
+  
+  @objc func arrowDownTap() {
+     companyTF.becomeFirstResponder()
+  }
+  
+    @objc func tapDone() {
+    self.view.endEditing(true)
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    self.switchBasedNextTextField(textField)
+    return true
+  }
+  
+  private func switchBasedNextTextField(_ textField: UITextField) {
+    switch textField {
+    case self.nameTF:
+      self.companyTF.becomeFirstResponder()
+    default:
+      self.companyTF.resignFirstResponder()
+    }
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
+  }
+  ```
