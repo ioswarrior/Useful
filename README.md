@@ -224,3 +224,23 @@ override func viewDidLoad() {
     self.view.endEditing(true)
   }
   ```
+  
+  ```swift
+    @objc func textFieldEditingChanged() {
+    if let text = textFieldHost.text {
+      if text.isEmpty {
+        changeButton.isEnabled = false
+      } else {
+        changeButton.isEnabled = true
+      }
+    }
+  }
+  
+  textFieldHost.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+  
+  
+  
+  override func viewDidLoad() {
+    setup()
+  }
+  ```
