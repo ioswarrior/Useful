@@ -173,7 +173,7 @@ class Defaults {
   }
 }
 ```
-# Наработки для клавиатуры
+# Custom functionality on top of the keyboard.
 
 ```swift
 override func viewDidLoad() {
