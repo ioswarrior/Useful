@@ -247,6 +247,9 @@ override func viewDidLoad() {
   ```
 # Zoom buttons
 ``` swift
+ private let zoomStep: CGFloat = 0.5
+ private var zoomScale: CGFloat = 1.0
+
 @objc func plusButtonAction(sender: UIButton!) {
     DispatchQueue.main.async {
       UIView.animate(withDuration: 2, animations: {
