@@ -245,3 +245,23 @@ override func viewDidLoad() {
     setup()
   }
   ```
+# Zoom buttons
+``` swift
+@objc func plusButtonAction(sender: UIButton!) {
+    DispatchQueue.main.async {
+      UIView.animate(withDuration: 2, animations: {
+        self.zoomScale += self.zoomStep
+        self.mImageView.transform = CGAffineTransform(scaleX: self.zoomScale, y: self.zoomScale)
+      })
+    }
+  }
+  
+  @objc func minusButtonAction(sender: UIButton!) {
+    DispatchQueue.main.async {
+      UIView.animate(withDuration: 2, animations: {
+        self.zoomScale -= self.zoomStep
+        self.mImageView.transform = CGAffineTransform(scaleX: self.zoomScale, y: self.zoomScale)
+      })
+    }
+  }
+ ```
