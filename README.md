@@ -260,4 +260,9 @@ override func viewDidLoad() {
         print(CGRect(origin: origin, size: size))
     }
   }
+  
+  // in viewDidload
+   let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(doubleTap))
+    tapRecognizer.numberOfTapsRequired = 2
+    view.addGestureRecognizer(tapRecognizer)
   ```
