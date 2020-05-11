@@ -241,3 +241,23 @@ override func viewDidLoad() {
     }
   }
  ```
+# Double tap zoom
+
+``` swift
+
+@IBAction func doubleTap(gestureRecognizer: UITapGestureRecognizer) {
+    let scale = min(mScrollView.zoomScale * 1.5, mScrollView.maximumZoomScale)
+
+    if scale != mScrollView.zoomScale {
+        let point = gestureRecognizer.location(in: mImageView)
+
+        let scrollSize = mScrollView.frame.size
+        let size = CGSize(width: scrollSize.width / scale,
+                          height: scrollSize.height / scale)
+        let origin = CGPoint(x: point.x - size.width / 2,
+                             y: point.y - size.height / 2)
+        mScrollView.zoom(to:CGRect(origin: origin, size: size), animated: true)
+        print(CGRect(origin: origin, size: size))
+    }
+  }
+  ```
